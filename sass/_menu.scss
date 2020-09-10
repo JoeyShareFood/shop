@@ -1,48 +1,37 @@
 /**************menu part start*****************/
 .main_menu {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 999;
-
 	.navbar-brand {
 		padding-top: 0rem;
 		padding-bottom: 0px;
 	}
-
 	.navbar {
 		padding: 0px;
 	}
-
 	.main-menu-item {
 		ul {
 			li .nav-link {
-				color: $menu-color;
-				font-size: 15px;
-				padding: 36px 23px;
-				font-family: $font_stack_1;
+				color: #4B3049;
+				font-size: 16px;
+				padding: 35px 21px;
+				font-family: "Rubik", sans-serif;
 				text-transform: capitalize;
-				line-height: 12px;
+				line-height: 16px;
 				font-weight: 400;
-
 				&:hover {
-					color: $black_color;
+					color: #795376 !important;
 				}
-
 				@media #{$medium_device} {
 					padding: 35px 20px;
 				}
 			}
 		}
 	}
-
 	#search_1 {
+		padding-top: 4px;
 		i {
 			color: $black_color;
 		}
 	}
-
 	#search_input_box {
 		position: fixed;
 		left: 50%;
@@ -56,7 +45,7 @@
 		z-index: 999;
 		text-align: center;
 		background: $btn_bg;
-
+		box-shadow: 0 10px 15px rgba(0, 0, 0, .2);
 		::placeholder {
 			color: #fff;
 		}
@@ -66,7 +55,6 @@
 		}
 
 	}
-
 	#search_input_box .form-control {
 		background: transparent;
 		border: 0;
@@ -75,14 +63,12 @@
 		font-size: 15px;
 		padding: 0;
 	}
-
 	#search_input_box .btn {
 		width: 0;
 		height: 0;
 		padding: 0;
 		border: 0;
 	}
-
 	#search_input_box .ti-close {
 		color: #fff;
 		font-weight: 600;
@@ -90,25 +76,21 @@
 		padding: 10px;
 		padding-right: 0;
 	}
-
-
 	.search-inner {
 		padding: 5px 5px;
 	}
-
 	.form-control:focus {
 		box-shadow: none;
 	}
-
 	.active_color {
 		color: $btn_hover !important;
 	}
 	a{
 		i{
-			color: $black_color;
+			color: $heading_color !important;
 			position: relative;
 			z-index: 1;
-			font-size: 15px;
+			font-size: 20px;
 			margin-left: 30px;
 		}
 	}
@@ -122,31 +104,11 @@
 		}
 	
 		i {
-			color: $black_color;
 			position: relative;
 			z-index: 1;
-			font-size: 15px;
-	
-			&:after {
-				position: absolute;
-				border-radius: 50%;
-				background-color: rgb(241, 61, 128);
-				width: 14px;
-				height: 14px;
-				right: -8px;
-				top: -8px;
-				content: "5";
-				text-align: center;
-				line-height: 15px;
-				font-size: 10px;
-				color: $white-color;
-			}
-	
 		}
 	}
 }
-
-
 
 .menu_fixed {
 	position: fixed;
@@ -154,7 +116,7 @@
 	width: 100%;
 	box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.05);
 	top: 0;
-	background-color: $btn_bg;
+	background-color: $white_color;
 
 	.active_color {
 		color: $btn_bg !important;
@@ -170,7 +132,6 @@
 		display: block;
 		border: 0px solid transparent;
 		background-color: $btn_bg;
-
 		.dropdown-item {
 			font-size: 14px;
 			padding: 8px 20px !important;
@@ -178,17 +139,23 @@
 			background-color: $btn_bg;
 			text-transform: capitalize;
 		}
-
 	}
-
-	&:hover {
+}
+@media (min-width: 991px){
+	.dropdown {
+		&:hover {
+			.dropdown-menu {
+				transform: scale(1);
+				box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+			}
+		}
+	}
+	.dropdown:hover {
 		.dropdown-menu {
-			transform: scale(1);
+			display: block;
 		}
 	}
 }
-
-
 
 @media #{$tab} {
 	.main_menu {
@@ -201,7 +168,8 @@
 
 	.main_menu .main-menu-item {
 		text-align: left !important;
-
+		max-height: 300px;
+		overflow: scroll;
 		.nav-item {
 			padding: 10px 15px !important;
 
@@ -230,7 +198,7 @@
 		}
 
 		&:hover {
-			.dropdown-menu {
+			.show {
 				transform: scale(1);
 				display: block;
 				color: $btn_bg;
@@ -243,13 +211,13 @@
 	}
 
 	.navbar-brand img {
-		max-width: 100px;
+		max-width: 120px;
 		margin: 0 auto;
 		position: absolute;
 		left: 0;
 		right: 0;
 		display: inline-block;
-		top: 0;
+		top: 3px;
 	}
 
 	.navbar-light .navbar-toggler {
@@ -286,35 +254,8 @@
 	background-color: #fafafa;
 }
 
-.dropdown:hover {
-	.dropdown-menu {
-		display: block;
-	}
-}
 
-.home_menu {
-	.menu_btn {
-		&:hover a {
-			color: $white-color !important;
-		}
-	}
 
-	.main-menu-item {
-		justify-content: center !important;
-	}
-}
-
-.single_page_menu {
-	.main-menu-item {
-		justify-content: flex-end;
-
-		ul {
-			li .nav-link {
-				&:hover {
-					color: $btn_bg !important;
-				}
-
-			}
-		}
-	}
+.main-menu-item {
+	justify-content: center !important;
 }

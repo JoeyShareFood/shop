@@ -1493,6 +1493,10 @@
     .btn_1{
         margin-top: 0px;
         padding: 15px 24px;
+        &:hover{
+            color: $btn_bg !important;
+            border: 1px solid $btn_bg;
+        }
     }
 }
 

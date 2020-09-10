@@ -50,7 +50,11 @@
   .form-group{
     margin-bottom: 30px;
     .button-contactForm{
-      color: $white_color !important;
+      color: $btn_bg !important;
+      border: 1px solid $btn_bg;
+      &:hover{
+        color: $white !important;
+      }
     }
     .btn_1{
       margin-bottom: -30px;
